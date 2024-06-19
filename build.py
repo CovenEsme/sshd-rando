@@ -44,6 +44,7 @@ if platform.system() == "Linux":
 
 compile_command += [
     "--enable-plugin=pyside6",
+    "--enable-plugin=multiprocessing",
     "--include-data-files=asm/additions/diffs/*.yaml=asm/additions/diffs/",
     "--include-data-files=asm/patches/diffs/*.yaml=asm/patches/diffs/",
     "--include-data-files=sshd_extract/README.md=sshd_extract/",
