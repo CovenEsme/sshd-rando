@@ -33,7 +33,6 @@ if platform.system() == "Darwin":
         "--macos-create-app-bundle",
         "--macos-app-icon=assets/icon.png",
         f"--macos-app-name={base_name}",
-        f"--macos-signed-app-name={base_name}",
         f"--macos-app-version={VERSION}",
     ]
 if platform.system() == "Linux":
@@ -63,6 +62,10 @@ compile_command += [
 
 if result := call(compile_command):
     raise Exception(f"Nuitka failed to compile the randomizer: {result}")
+
+macos_default_build_path = Path("dist") / "sshdrando.app"
+if macos_default_build_path.exists():
+    shutil.move(macos_default_build_path, Path("dist") / (base_name + exe_ext))
 
 exe_path = Path("dist") / (base_name + exe_ext)
 
