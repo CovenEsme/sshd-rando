@@ -33,6 +33,7 @@ if platform.system() == "Darwin":
         "--macos-create-app-bundle",
         "--macos-app-icon=assets/icon.png",
         f"--macos-app-name={base_name}",
+        f"--macos-signed-app-name={base_name}",
         f"--macos-app-version={VERSION}",
     ]
 if platform.system() == "Linux":
