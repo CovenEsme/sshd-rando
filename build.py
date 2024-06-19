@@ -3,21 +3,65 @@
 from pathlib import Path
 import platform
 import shutil
+from subprocess import call
+import sys
 
 from constants.randoconstants import VERSION
 
 base_name = f"Skyward Sword HD Randomizer {VERSION}"
+
+compile_command = [
+    sys.executable,  # Uses the same python install as is currently being used to run build.py
+    "-m",
+    "nuitka",
+]
 
 exe_ext = ""
 
 if platform.system() == "Windows":
     exe_ext = ".exe"
     platform_name = "windows"
+    compile_command += [
+        "--onefile",
+        "--windows-console-mode=disable",
+        "--windows-icon-from-ico=assets/icon.png",
+    ]
 if platform.system() == "Darwin":
     exe_ext = ".app"
     platform_name = "macos"
+    compile_command += [
+        "--macos-create-app-bundle",
+        "--macos-app-icon=assets/icon.png",
+        f"--macos-app-name={base_name}",
+        f"--macos-app-version={VERSION}",
+    ]
 if platform.system() == "Linux":
     platform_name = "linux"
+    compile_command += [
+        "--onefile",
+        "--linux-icon=assets/icon.png",
+    ]
+
+compile_command += [
+    "--enable-plugin=pyside6",
+    "--include-data-files=asm/additions/diffs/*.yaml=asm/additions/diffs/",
+    "--include-data-files=asm/patches/diffs/*.yaml=asm/patches/diffs/",
+    "--include-data-files=sshd_extract/README.md=sshd_extract/",
+    "--include-data-files=*.md=./",
+    "--include-data-files=LICENSE=./",
+    "--include-data-dir=assets=assets",
+    "--include-data-dir=data=data",
+    "--include-data-dir=gui/custom_themes=gui/custom_themes",
+    "--include-data-dir=plandomizers=plandomizers",
+    "--include-data-dir=presets=presets",
+    f"--output-filename={base_name}",
+    "--output-dir=dist",
+    "--remove-output",
+    "sshdrando.py",
+]
+
+if result := call(compile_command):
+    raise Exception(f"Nuitka failed to compile the randomizer: {result}")
 
 exe_path = Path("dist") / (base_name + exe_ext)
 
