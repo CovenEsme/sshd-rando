@@ -6216,6 +6216,581 @@ B301: # after Sandship boss
       params1: 0xC303FF03 # change to zone temp flag 3
       anglez: 0xFFFF # no untrigger flag
 
+S000:
+  - name: Move tear 1 # on vines near waterfall cave
+    type: objpatch
+    id: 0xFC2F
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 11150
+      posy: 400
+      posz: -8475
+  - name: Move tear 2 # chimney in village
+    type: objpatch
+    id: 0xFC31
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 7785
+      posy: 1390
+      posz: 2585
+  - name: Move tear 3 # under sparrot's house
+    type: objpatch
+    id: 0xFC32
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 11202
+      posy: -1526
+      posz: 3185
+  - name: Move tear 4 # under village bridge
+    type: objpatch
+    id: 0xFC33
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 6200
+      posy: 90
+      posz: -1250
+  - name: Move tear 5 # under bell
+    type: objpatch
+    id: 0xFC34
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: -5165
+      posy: 2300
+      posz: -8900
+  - name: Move tear 6 # inside goddess statue
+    type: objpatch
+    id: 0xFC35
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 0
+      posy: 2940
+      posz: -19270
+  - name: Move tear 7 # behind the goddess statue
+    type: objpatch
+    id: 0xFC36
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 1970
+      posy: 1000
+      posz: -21837
+  - name: Move tear 8 # backflip off bridge to goddess statue
+    type: objpatch
+    id: 0xFC37
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 617
+      posy: 600
+      posz: -10594
+  - name: Move tear 9 # hang off platform behind goddess statue
+    type: objpatch
+    id: 0xFC38
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: -1400
+      posy: 700
+      posz: -19920
+  - name: Move tear 10 # hang off diving platform near trial gate
+    type: objpatch
+    id: 0xFC39
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 1030
+      posy: -100
+      posz: 7390
+  - name: Move tear 11 # near Batreaux's House
+    type: objpatch
+    id: 0xFC3A
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 6045
+      posy: -3500
+      posz: 310
+  - name: Move tear 12 # land on far side of lake
+    type: objpatch
+    id: 0xFC5D
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 10600
+      posy: 300
+      posz: -4600
+  - name: Move tear 13 # on top of Academy
+    type: objpatch
+    id: 0xFC5F
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: -8430
+      posy: 2875
+      posz: -7850
+  - name: Move tear 14 # Under Waking Water near Stepping Stones
+    type: objpatch
+    id: 0xFC60
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 5500
+      posy: -375
+      posz: -9000
+  - name: Move tear 15 # Under Waking Water in Shed
+    type: objpatch
+    id: 0xFC7E
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      posx: 3350
+      posy: -700
+      posz: -3350
+  # Enemies
+  - name: Area Watcher in Sailcloth Landing Circle
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 0
+      posy: 3025
+      posz: -16660
+      id: 0xFFFF
+      name: EPo
+  - name: Waking Water inside Goddess Statue
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: SOBJ
+    object:
+      params1: 0xFFFFFFC4
+      params2: 0xFFFFFFFF
+      posx: 0
+      posy: 2940
+      posz: -19270
+      sizex: 5
+      sizey: 1
+      sizez: 20
+      id: 0xFFFF
+      name: EvilFld
+  - name: Guardian outside Goddess Statue 1
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF800FFFF
+      params2: 0xFFFFFFFF
+      posx: -150
+      posy: 3051
+      posz: -18250
+      id: 0xFFFF
+      name: EChaser
+  - name: Guardian outside Goddess Statue 2
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF800FFFF
+      params2: 0xFFFFFFFF
+      posx: 150
+      posy: 3051
+      posz: -18250
+      id: 0xFFFF
+      name: EChaser
+  - name: Watcher near Sailcloth Landing Circle 1
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: -1400
+      posy: 2885
+      posz: -16650
+      angley: 0x4000
+      id: 0xFFFF
+      name: EChb
+  - name: Watcher near Sailcloth Landing Circle 2
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 1400
+      posy: 2885
+      posz: -16650
+      angley: 0xC000
+      id: 0xFFFF
+      name: EChb
+  - name: Watcher near Misplaced Bars 1
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: -1150
+      posy: 2885
+      posz: -14200
+      angley: 0x4000
+      id: 0xFFFF
+      name: EChb
+  - name: Watcher near Misplaced Bars 2
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 1250
+      posy: 2885
+      posz: -14200
+      angley: 0xC000
+      id: 0xFFFF
+      name: EChb
+  - name: Guardian outside Waterfall Cave
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF800FFFF
+      params2: 0xFFFFFFFF
+      posx: 9700
+      posy: 837
+      posz: -7700
+      angley: 20000
+      id: 0xFFFF
+      name: EChaser
+  - name: Area Watcher on Stepping Stones
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 6200
+      posy: 222
+      posz: -8350
+      id: 0xFFFF
+      name: EPo
+  - name: Area Watcher outside Waterfall Cave
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 10120
+      posy: 801
+      posz: -8540
+      id: 0xFFFF
+      name: EPo
+  - name: Watcher under Stepping Stones
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 6290
+      posy: -485
+      posz: -7900
+      angley: 0xA500
+      id: 0xFFFF
+      name: EChb
+  - name: Watcher under Shed
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 3350
+      posy: -700
+      posz: -3350
+      angley: 22000
+      id: 0xFFFF
+      name: EPo
+  - name: Watcher under Lake 1
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 8200
+      posy: -570
+      posz: -8400
+      angley: 0x5000
+      id: 0xFFFF
+      name: EChb
+  - name: Guardian on Lake 1
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF800FFFF
+      params2: 0xFFFFFFFF
+      posx: 8200
+      posy: 61
+      posz: -8400
+      angley: 0x5000
+      id: 0xFFFF
+      name: EChaser
+  - name: Watcher under Lake 2
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 7100
+      posy: -577
+      posz: -7100
+      id: 0xFFFF
+      name: EChb
+  - name: Guardian on Lake 2
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF800FFFF
+      params2: 0xFFFFFFFF
+      posx: 7100
+      posy: 61
+      posz: -7100
+      id: 0xFFFF
+      name: EChaser
+  - name: Watcher under Lake 3
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 9000
+      posy: -627
+      posz: -6500
+      angley: 0xC000
+      id: 0xFFFF
+      name: EChb
+  - name: Guardian on Lake 3
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF800FFFF
+      params2: 0xFFFFFFFF
+      posx: 9000
+      posy: 61
+      posz: -6500
+      angley: 0xC000
+      id: 0xFFFF
+      name: EChaser
+  - name: Watcher under Lake 4
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 8000
+      posy: -670
+      posz: -5000
+      id: 0xFFFF
+      name: EChb
+  - name: Guardian on Lake 4
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF800FFFF
+      params2: 0xFFFFFFFF
+      posx: 8000
+      posy: 61
+      posz: -5000
+      id: 0xFFFF
+      name: EChaser
+  - name: Watcher under Lake 5
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 6000
+      posy: -781
+      posz: -4800
+      angley: 22000
+      id: 0xFFFF
+      name: EChb
+  - name: Guardian on Lake 5
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF800FFFF
+      params2: 0xFFFFFFFF
+      posx: 6000
+      posy: 61
+      posz: -4800
+      angley: 22000
+      id: 0xFFFF
+      name: EChaser
+  - name: Watcher under Lake 6
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFFF
+      params2: 0xFFFFFFFF
+      posx: 10450
+      posy: -204
+      posz: -3875
+      angley: 0xB203
+      id: 0xFFFF
+      name: EChb
+  - name: Guardian on Lake 6
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xF800FFFF
+      params2: 0xFFFFFFFF
+      posx: 10450
+      posy: 61
+      posz: -3875
+      angley: 0xB203
+      id: 0xFFFF
+      name: EChaser
+  # Light Fruits
+  - name: Light Fruit on Vines behind Goddess Statue
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFF0FFE2F
+      params2: 0xFFFFFFFF
+      posx: -552
+      posy: 2400
+      posz: -21245
+      anglex: 0x4000
+      angley: 0x7890 # 0x8000 - 1904
+      anglez: 0
+      id: 0xFE00
+      name: Item
+  # Misc stuff
+  - name: Remove fences to goddess statue
+    type: objdelete
+    startid: 0xFC2D
+    endid: 0xFC2E
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Remove Batreaux's Shed Door
+    type: objdelete
+    id: 0xFC72
+    layer: 2
+    room: 0
+    objtype: OBJ
+  - name: Add Batreaux's House Door
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJS
+    object:
+      params1: 0x0000FF00
+      params2: 0xFF5FFFFF
+      posx: 5286
+      posy: -3476
+      posz: 20
+      anglex: 769
+      angley: 64262
+      anglez: 1
+      id: 0xFFFF
+      name: Door
+  - name: Add Box on top of Academy
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: -8229
+      posy: 2272
+      posz: -9037
+      anglex: 0
+      angley: 8192
+      anglez: 0
+      id: 0xFFFF
+      name: Kibako
+  - name: Add test box below west cliff
+    type: objadd
+    layer: 2
+    room: 0
+    objtype: OBJ
+    object:
+      params1: 0xFFFFFFF0
+      params2: 0xFFFFFFFF
+      posx: -3300
+      posy: -1795.430054
+      posz: 900
+      anglex: 0
+      angley: 8192
+      anglez: 0
+      id: 0xFFFF
+      name: Kibako
+
 S100: # Farore's Silent Realm
   - name: Fi text near waking water
     type: objdelete
