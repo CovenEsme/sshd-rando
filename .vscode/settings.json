@@ -6,5 +6,18 @@
         "tests"
     ],
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "rust-analyzer.linkedProjects": [
+        "./asm/additions/rust-additions/Cargo.toml"
+    ]
+    // ,
+    // "rust-analyzer.cargo.extraArgs": [
+    //     "+nightly-2025-11-20"
+    // ],
+    // "rust-analyzer.check.extraArgs": [
+    //     "+nightly-2025-11-20"
+    // ],
+    // "rust-analyzer.rustfmt.extraArgs": [
+    //     "+nightly-2025-11-20"
+    // ]
 }
