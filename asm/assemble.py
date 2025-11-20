@@ -164,8 +164,13 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
         temp_linker_script = linker_script + NEWLINE
 
         for symbol in custom_symbols:
+            formatted_symbol = symbol.replace("<", "__").replace(">", "__")
             temp_linker_script += (
-                symbol + " = " + hex(custom_symbols[symbol]) + SEMICOLON + NEWLINE
+                formatted_symbol
+                + " = "
+                + hex(custom_symbols[symbol])
+                + SEMICOLON
+                + NEWLINE
             )
 
         with open(asm_file_path, "r", encoding="utf-8") as f:
@@ -226,6 +231,7 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
                 code_blocks[asm_read_offset].append(line + NEWLINE)
 
         for symbol in local_branches:
+            symbol = symbol.replace("<", "__").replace(">", "__")
             temp_linker_script += symbol
 
         for code_block_identifier, code in code_blocks.items():
@@ -292,9 +298,9 @@ def assemble(temp_dir_name: Path, asmPaths: list[Path], outputPath: Path):
             if asm_file_path == ASM_RUST_ADDITIONS_PATH:
                 linker_command.append("./" + ASM_RUST_ADDITIONS_TARGET_PATH.as_posix())
 
-            # with open(temp_linker_file_name, "r", encoding="utf-8") as f:
-            #     with open("./linker_file.txt", "w") as linker_f:
-            #         linker_f.write(f.read())
+            with open(temp_linker_file_name, "r", encoding="utf-8") as f:
+                with open("./linker_file.txt", "w") as linker_f:
+                    linker_f.write(f.read())
 
             if result := call(linker_command):
                 raise Exception(

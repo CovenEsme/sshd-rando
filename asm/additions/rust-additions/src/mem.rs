@@ -316,14 +316,14 @@ pub extern "C" fn use_custom_bzs(
             let mut current_char_index = 0;
 
             for character in b"dat/" {
-                BZS_STRING[current_char_index] = *character as i8;
+                BZS_STRING[current_char_index] = *character as u8;
                 current_char_index += 1;
             }
 
             let mut found_string_terminator = false;
             for stage_char in &mut NEXT_STAGE_NAME[0..6] {
                 if !found_string_terminator && *stage_char != 0 {
-                    BZS_STRING[current_char_index] = *stage_char as i8;
+                    BZS_STRING[current_char_index] = *stage_char as u8;
                     current_char_index += 1;
                 } else {
                     found_string_terminator = true;
@@ -331,25 +331,25 @@ pub extern "C" fn use_custom_bzs(
             }
 
             for character in b"_stage.bzs\0" {
-                BZS_STRING[current_char_index] = *character as i8;
+                BZS_STRING[current_char_index] = *character as u8;
                 current_char_index += 1;
             }
 
-            asm!("mov x2, {0:x}", in(reg) &BZS_STRING);
+            asm!("mov x2, {0:x}", in(reg) &raw const BZS_STRING);
             asm!("mov x1, {0:x}", in(reg) new_arc_name);
         } else if strcmp(model_path, (*c"dat/room.bzs").as_ptr()) == 0 {
             let new_arc_name = (*c"bzs").as_ptr();
             let mut current_char_index = 0;
 
             for character in b"dat/" {
-                BZS_STRING[current_char_index] = *character as i8;
+                BZS_STRING[current_char_index] = *character as u8;
                 current_char_index += 1;
             }
 
             let mut found_string_terminator = false;
             for stage_char in &mut NEXT_STAGE_NAME[0..8] {
                 if !found_string_terminator && *stage_char != 0 {
-                    BZS_STRING[current_char_index] = *stage_char as i8;
+                    BZS_STRING[current_char_index] = *stage_char as u8;
                     current_char_index += 1;
                 } else {
                     found_string_terminator = true;
@@ -357,7 +357,7 @@ pub extern "C" fn use_custom_bzs(
             }
 
             for character in b"_room_" {
-                BZS_STRING[current_char_index] = *character as i8;
+                BZS_STRING[current_char_index] = *character as u8;
                 current_char_index += 1;
             }
 
@@ -379,11 +379,11 @@ pub extern "C" fn use_custom_bzs(
             current_char_index += 1;
 
             for character in b".bzs\0" {
-                BZS_STRING[current_char_index] = *character as i8;
+                BZS_STRING[current_char_index] = *character as u8;
                 current_char_index += 1;
             }
 
-            asm!("mov x2, {0:x}", in(reg) &BZS_STRING);
+            asm!("mov x2, {0:x}", in(reg) &raw const BZS_STRING);
             asm!("mov x1, {0:x}", in(reg) new_arc_name);
         } else {
             asm!("mov x2, {0:x}", in(reg) model_path);

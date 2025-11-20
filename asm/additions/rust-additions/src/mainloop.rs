@@ -74,6 +74,9 @@ pub extern "C" fn main_loop_inject() -> *mut c_void {
         && input::check_button_pressed_up(input::BUTTON_INPUTS::R_BUTTON))
     {
         mem::debug_print_all_heap_info();
+
+        // TODO: add test net code here :p
+        net_test();
     }
 
     color::handle_colors();
@@ -82,6 +85,9 @@ pub extern "C" fn main_loop_inject() -> *mut c_void {
 
     return unsafe { dSystem };
 }
+
+#[no_mangle]
+pub extern "C" fn net_test() {}
 
 #[no_mangle]
 pub extern "C" fn activate_back_in_time(param1: *mut c_void) -> *mut c_void {

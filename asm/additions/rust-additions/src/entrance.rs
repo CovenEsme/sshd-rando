@@ -291,7 +291,7 @@ pub extern "C" fn fix_sky_keep_exit(
     mut unk11: u32,
 ) {
     unsafe {
-        if &(*stage_name)[..5] == b"F000\0" {
+        if &(&(*stage_name))[..5] == b"F000\0" {
             // Use bzs exit when leaving the dungeon (makes ER work properly)
             GameReloader__triggerExit(game_reloader, 0, 1, 2, 2);
         } else {

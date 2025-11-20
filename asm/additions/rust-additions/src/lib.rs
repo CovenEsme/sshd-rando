@@ -1,5 +1,4 @@
 #![no_std]
-#![feature(ptr_from_ref)]
 #![feature(split_array)]
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]

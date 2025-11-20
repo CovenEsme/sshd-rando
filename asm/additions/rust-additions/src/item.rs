@@ -1195,7 +1195,7 @@ pub extern "C" fn check_and_open_trial_gates(collected_item: flag::ITEMFLAGS) {
             if !trial_gate_actor.is_null() {
                 ((*(*trial_gate_actor).state_mgr.vtable).change_state)(
                     &mut (*trial_gate_actor).state_mgr as *mut actor::StateMgr,
-                    &mut dAcOWarp__StateGateOpen as *mut c_void,
+                    &raw mut dAcOWarp__StateGateOpen as *mut c_void,
                 );
             }
         }
