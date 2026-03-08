@@ -149,7 +149,9 @@
   dungeon: Fire Sanctuary
   exits:
     FS North Bridge Bottom: Nothing
-    FS North Bridge East Side: Clawshots or logic_fs_pillar_jump # No bow for the bokos?
+    # Clawshots for the targets; Bow, Slingshot, or Hook Beetle to deal with the annoying bokoblin archers; or just pillar jump.
+    # Pillar jump allows the player to hide out of the bokoblins' line of sight so they aren't really an issue.
+    FS North Bridge East Side: (Clawshots and (Bow or Slingshot or Hook_Beetle)) or logic_fs_pillar_jump
     FS South Bridge: Nothing
     FS Under Magmanos Fight Room Past Sliding Door: Nothing
 
