@@ -29,7 +29,8 @@
 - name: FS First Magmanos Room
   dungeon: Fire Sanctuary
   exits:
-    FS South Bridge: Nothing
+    # Clawshots to skip to the end of the vines, bow or slingshot to kill / stun the bokoblin archers.
+    FS South Bridge: Clawshots or Bow or Slingshot
     FS First Magmanos Room Balcony: Mogma_Mitts and Sword
     FS First Outside Section: Nothing
   locations:
